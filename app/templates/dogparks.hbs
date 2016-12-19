@@ -9,6 +9,12 @@
   </p>
 </div>
 
-{{#each model as |dogparkUnit|}}
-  {{dogpark-listing dogpark=dogparkUnit}}
-{{/each}}
+{{#list-filter
+  filter=(action 'filterByCity')
+  as |dogparks|}}
+  <ul class="results">
+    {{#each dogparks as |dogparkUnit|}}
+      <li>{{dogpark-listing dogpark=dogparkUnit}}</li>
+    {{/each}}
+  </ul>
+  {{/list-filter}}
