@@ -8,3 +8,12 @@
     {{/link-to}}
   </p>
 </div>
+
+{{#each model as |dogpark|}}
+  <article class="listing">
+    <h3>{{dogpark.title}}</h3>
+    <div class="detail location">
+      <span>Location:</span>{{dogpark.city}}
+    </div>
+  </article>
+{{/each}}
